@@ -9,24 +9,24 @@ Projeto desenvolvido no Senac Tatuapé uma ordem de serviço para uma oficina me
 Celso Kuteken, Karen Oliveira e Luiz Chaves.
 ## Capturas de Tela
 
-##Tela Principal
+## Tela Principal
 
 ![tela](https://github.com/karenoliveiraw/os-atlantida/blob/main/imgoficina/Main%20-%20Grupo%20atlantida.PNG)
 
-##Tela de Login
+## Tela de Login
 
 ![tela](https://github.com/karenoliveiraw/os-atlantida/blob/main/imgoficina/Login%20-%20Grupo%20atlantida.PNG)
-Tela de Usuário
+## Tela de Usuário
 
 ![tela](https://github.com/karenoliveiraw/os-atlantida/blob/main/imgoficina/Usuarios%20-%20Grupo%20atlantida.PNG)
-##Tela de Clientes
+## Tela de Clientes
 ![tela](https://github.com/karenoliveiraw/os-atlantida/blob/main/imgoficina/Cliente%20-%20Grupo%20atlantida.PNG)
-##Tela da Ordem de Serviço
+## Tela da Ordem de Serviço
 
 ![tela](https://github.com/karenoliveiraw/os-atlantida/blob/main/imgoficina/OS%20-%20Grupo%20atlantida.PNG)
-##Tela de Relatórios
+## Tela de Relatórios
 
 ![tela](https://github.com/karenoliveiraw/os-atlantida/blob/main/imgoficina/Relatorios%20-%20Grupo%20atlantida.PNG)
 
-##Sobre
+## Sobre
 ![tela](https://github.com/karenoliveiraw/os-atlantida/blob/main/imgoficina/Sobre%20-%20Grupo%20atlantida.PNG)

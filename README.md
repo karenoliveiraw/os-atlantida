@@ -16,8 +16,17 @@ Tela Principal
 Tela de Login
 
 ![tela](https://github.com/karenoliveiraw/os-atlantida/blob/main/imgoficina/Login%20-%20Grupo%20atlantida.PNG)
+Tela de Usuário
+
 ![tela](https://github.com/karenoliveiraw/os-atlantida/blob/main/imgoficina/Usuarios%20-%20Grupo%20atlantida.PNG)
+Tela de Clientes
 ![tela](https://github.com/karenoliveiraw/os-atlantida/blob/main/imgoficina/Cliente%20-%20Grupo%20atlantida.PNG)
+Tela da Ordem de Serviço
+
 ![tela](https://github.com/karenoliveiraw/os-atlantida/blob/main/imgoficina/OS%20-%20Grupo%20atlantida.PNG)
+Tela de Relatórios
+
 ![tela](https://github.com/karenoliveiraw/os-atlantida/blob/main/imgoficina/Relatorios%20-%20Grupo%20atlantida.PNG)
+
+Sobre
 ![tela](https://github.com/karenoliveiraw/os-atlantida/blob/main/imgoficina/Sobre%20-%20Grupo%20atlantida.PNG)

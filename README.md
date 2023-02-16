@@ -2,7 +2,7 @@
 
 # Ordem de Serviço - Atlântida Oficina Mecânica
 
-Projeto desenvolvido no Senac Tatuapé uma ordem de serviço para uma oficina mecânica.
+Projeto desenvolvido no Senac Tatuapé. Uma ordem de serviço para uma oficina mecânica.
 
 ## Devs
 

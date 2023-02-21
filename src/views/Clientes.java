@@ -79,13 +79,12 @@ public class Clientes extends JDialog {
 	 * Create the dialog.
 	 */
 	public Clientes() {
+		setResizable(false);
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowActivated(WindowEvent e) {
 			}
 		});
-		setResizable(false);
-		setModal(true);
 		setFont(new Font("Dialog", Font.PLAIN, 12));
 		setTitle("Clientes");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Clientes.class.getResource("/img/clientes].png")));

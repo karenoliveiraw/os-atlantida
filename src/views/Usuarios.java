@@ -25,6 +25,9 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JCheckBox;
 import javax.swing.UIManager;
+
+import Atxy2k.CustomTextField.RestrictedTextField;
+
 import javax.swing.JPanel;
 
 public class Usuarios extends JDialog {
@@ -202,6 +205,20 @@ public class Usuarios extends JDialog {
 		panelUsuarios_1.setBackground(new Color(32, 178, 170));
 		panelUsuarios_1.setBounds(0, 0, 434, 20);
 		getContentPane().add(panelUsuarios_1);
+		
+		
+		RestrictedTextField login = new RestrictedTextField(txtLogin);
+		login.setLimit(15);
+		login.setOnlyText(true);
+		RestrictedTextField usuario = new RestrictedTextField(txtUsuario);
+		usuario.setLimit(15);
+		RestrictedTextField senha = new RestrictedTextField(txtPassword);
+		senha.setLimit(15);
+		
+		btnCreate.setEnabled(true);
+		btnRead.setEnabled(true);
+		btnDelete.setEnabled(false);
+		btnUpdate.setEnabled(false);
 
 	}// fim do construtor
 
@@ -227,8 +244,9 @@ public class Usuarios extends JDialog {
 	void pesquisarUsuario() {
 		// validação
 		if (txtLogin.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Digite o nome do usuario");
-			txtUsuario.requestFocus();
+			JOptionPane.showMessageDialog(null, "Digite o nome do login");
+			txtLogin.requestFocus();
+			
 		} else {
 			// System.out.println("Teste pesquisar");
 			// Iniciar com a instru��o sql
@@ -266,14 +284,14 @@ public class Usuarios extends JDialog {
 
 				} else {
 					JOptionPane.showMessageDialog(null, "Usuário inexistente");
-					// setar campos e bot�es (UX)
-					// habilitar bot�es (alterar e excluir)
-					
+				
 					limpar();
+					txtLogin.requestFocus();
+					
 					btnCreate.setEnabled(true);
 					btnRead.setEnabled(true);
-					btnDelete.setEnabled(true);
-					btnUpdate.setEnabled(true);
+					btnDelete.setEnabled(false);
+					btnUpdate.setEnabled(false);
 					
 
 				}
@@ -290,9 +308,9 @@ public class Usuarios extends JDialog {
 	 * Método respons�vel pelo cadastro de um novo usuario
 	 */
 	private void adicionarUsuario() {
-		
+		// captura segura de senha
 		String capturaSenha = new String(txtPassword.getPassword());
-		
+		// validação de campos obrigatórios
 		if (txtUsuario.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o Usuario");
 			txtUsuario.requestFocus();
@@ -300,6 +318,10 @@ public class Usuarios extends JDialog {
 		} else if (txtLogin.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o Login ");
 			txtLogin.requestFocus();
+			
+		} else if (cboPerfil.getSelectedItem().equals("")) {
+			JOptionPane.showMessageDialog(null, "Insira o perfil");
+				cboPerfil.requestFocus();
 
 		} else if (capturaSenha.length() == 0) {
 			JOptionPane.showMessageDialog(null, "Preencha a Senha ");
@@ -328,19 +350,19 @@ public class Usuarios extends JDialog {
 					limpar();
 					btnCreate.setEnabled(true);
 					btnRead.setEnabled(true);
-					btnDelete.setEnabled(true);
-					btnUpdate.setEnabled(true);
+					btnDelete.setEnabled(false);
+					btnUpdate.setEnabled(false);
 					
 				} else {
 					JOptionPane.showMessageDialog(null, "ERRO - Usuário não adicionado");
-					limpar();
 				}
-				
+				limpar();
 				// Encerrar a conex�o
 				con.close();
 
 			} catch (java.sql.SQLIntegrityConstraintViolationException e1) {
 				JOptionPane.showMessageDialog(null, "Usuário não adicionado - Login existente");
+				limpar();
 				txtLogin.setText(null);
 				txtLogin.requestFocus();
 			} catch (Exception e2) {
@@ -444,8 +466,8 @@ public class Usuarios extends JDialog {
 					limpar();
 					btnCreate.setEnabled(true);
 					btnRead.setEnabled(true);
-					btnDelete.setEnabled(true);
-					btnUpdate.setEnabled(true);
+					btnDelete.setEnabled(false);
+					btnUpdate.setEnabled(false);
 
 				} else {
 					JOptionPane.showMessageDialog(null, "ERRO - Dados do usuário  não foram alterados");
@@ -460,7 +482,7 @@ public class Usuarios extends JDialog {
 	}
 
 	/**
-	 * Método usado para excluir um contato
+	 * M�todo usado para excluir um contato
 	 */
 
 	private void excluirUsuario() {
@@ -483,13 +505,15 @@ public class Usuarios extends JDialog {
 				// executar o comando sql e confirmar a exclus�o
 				int confirmaExcluir = pst.executeUpdate();
 				if (confirmaExcluir == 1) {
-					
+					limpar();
 					JOptionPane.showMessageDialog(null, "Usuario excluido com sucesso!");
 					limpar();
-				
+					btnCreate.setEnabled(true);
+					btnRead.setEnabled(true);
+					btnDelete.setEnabled(false);
+					btnUpdate.setEnabled(false);
 				} else {
-					JOptionPane.showMessageDialog(null, "ERRO na exclusão do usuario");
-					limpar();
+					JOptionPane.showMessageDialog(null, "ERRO na exclusãoo do usuario");
 				}
 				
 				con.close();
@@ -511,9 +535,9 @@ public class Usuarios extends JDialog {
 		txtPassword.setText(null);
 		txtPassword.setBackground(Color.WHITE);
 		txtUsuario.requestFocus();
-		//btnCreate.setEnabled(false);
-	//	btnUpdate.setEnabled(false);
-	//	btnDelete.setEnabled(false);
+		btnCreate.setEnabled(false);
+		btnUpdate.setEnabled(false);
+		btnDelete.setEnabled(false);
 		btnRead.setEnabled(true);
 		txtPassword.setEditable(true);
 		cboPerfil.setSelectedItem("");

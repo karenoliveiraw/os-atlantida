@@ -23,10 +23,10 @@ Celso Kuteken, Karen Oliveira e Luiz Chaves.
 ![tela](https://github.com/karenoliveiraw/os-atlantida/blob/main/imgoficina/Cliente%20-%20Grupo%20atlantida.PNG)
 ## Tela da Ordem de Serviço
 
-![tela](https://github.com/karenoliveiraw/os-atlantida/blob/main/imgoficina/OS%20-%20Grupo%20atlantida.PNG)
+![tela](https://github.com/karenoliveiraw/os-atlantida/blob/main/imgoficina/telaos.PNG)
 ## Tela de Relatórios
 
-![tela](https://github.com/karenoliveiraw/os-atlantida/blob/main/imgoficina/Relatorios%20-%20Grupo%20atlantida.PNG)
+![tela](https://github.com/karenoliveiraw/os-atlantida/blob/main/imgoficina/telarel.PNG)
 
 ## Sobre
 ![tela](https://github.com/karenoliveiraw/os-atlantida/blob/main/imgoficina/Sobre%20-%20Grupo%20atlantida.PNG)

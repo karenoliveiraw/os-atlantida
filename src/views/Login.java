@@ -21,6 +21,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import Atxy2k.CustomTextField.RestrictedTextField;
 import models.DAO;
 import java.awt.Cursor;
 
@@ -55,6 +56,7 @@ public class Login extends JFrame {
 	 * Create the frame.
 	 */
 	public Login() {
+		setResizable(false);
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowActivated(WindowEvent e) {
@@ -125,6 +127,17 @@ public class Login extends JFrame {
 		lblNewLabel_2.setIcon(new ImageIcon(Login.class.getResource("/img/icon120x120.png")));
 		lblNewLabel_2.setBounds(234, 147, 120, 120);
 		contentPane.add(lblNewLabel_2);
+		
+		//validações
+		
+		RestrictedTextField senha = new RestrictedTextField(txtSenha);
+		senha.setLimit(15);
+		RestrictedTextField login = new RestrictedTextField(txtLogin);
+		login.setLimit(15);
+		login.setOnlyText(true);
+		
+		
+		
 
 	}// fim do construtor
 

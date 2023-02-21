@@ -68,7 +68,7 @@ public class OS extends JDialog {
 	private JTextField txtCor;
 	private JTextField txtAno;
 	private JTextField txtKm;
-	private JTextField txtServico;
+	private JTextField txtDefeito;
 	private JTextField txtDataSaida;
 	private JTextField txtMecanico;
 	private JTextField txtValor;
@@ -94,13 +94,15 @@ public class OS extends JDialog {
 	 * Create the dialog.
 	 */
 	public OS() {
+		setResizable(false);
+		setModal(true);
 		setTitle("Ordem de Serviço");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(OS.class.getResource("/img/icon120x120.png")));
-		setBounds(100, 100, 608, 595);
+		setBounds(100, 100, 608, 736);
 		getContentPane().setLayout(null);
 
-		JLabel lblNewLabel = new JLabel("Os");
-		lblNewLabel.setBounds(48, 62, 46, 14);
+		JLabel lblNewLabel = new JLabel("N° OS");
+		lblNewLabel.setBounds(31, 62, 46, 14);
 		getContentPane().add(lblNewLabel);
 
 		txtOs = new JTextField();
@@ -132,7 +134,7 @@ public class OS extends JDialog {
 				Adicionar();
 			}
 		});
-		btnCreate.setBounds(148, 460, 64, 64);
+		btnCreate.setBounds(148, 606, 64, 64);
 		getContentPane().add(btnCreate);
 
 		btnDelete = new JButton("");
@@ -144,7 +146,7 @@ public class OS extends JDialog {
 		btnDelete.setIcon(new ImageIcon(OS.class.getResource("/img/delete.png")));
 		btnDelete.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnDelete.setToolTipText("Deletar uma ordem de serviço");
-		btnDelete.setBounds(291, 461, 64, 64);
+		btnDelete.setBounds(291, 607, 64, 64);
 		getContentPane().add(btnDelete);
 
 		JLabel lblNewLabel_12 = new JLabel("Data");
@@ -152,47 +154,47 @@ public class OS extends JDialog {
 		getContentPane().add(lblNewLabel_12);
 
 		JLabel lblNewLabel_13 = new JLabel("Descrição do veículo:");
-		lblNewLabel_13.setBounds(127, 208, 156, 14);
+		lblNewLabel_13.setBounds(127, 246, 156, 14);
 		getContentPane().add(lblNewLabel_13);
 
 		JLabel lblNewLabel_14 = new JLabel("Placa");
-		lblNewLabel_14.setBounds(127, 236, 35, 14);
+		lblNewLabel_14.setBounds(127, 271, 35, 14);
 		getContentPane().add(lblNewLabel_14);
 
 		txtPlaca = new JTextField();
-		txtPlaca.setBounds(160, 230, 56, 20);
+		txtPlaca.setBounds(160, 265, 56, 20);
 		getContentPane().add(txtPlaca);
 		txtPlaca.setColumns(10);
 
 		JLabel lblNewLabel_15 = new JLabel("Marca");
-		lblNewLabel_15.setBounds(248, 236, 43, 14);
+		lblNewLabel_15.setBounds(248, 271, 43, 14);
 		getContentPane().add(lblNewLabel_15);
 
 		txtMarca = new JTextField();
-		txtMarca.setBounds(288, 230, 56, 20);
+		txtMarca.setBounds(288, 265, 56, 20);
 		getContentPane().add(txtMarca);
 		txtMarca.setColumns(10);
 
 		JLabel lblNewLabel_16 = new JLabel("Modelo");
-		lblNewLabel_16.setBounds(368, 236, 46, 14);
+		lblNewLabel_16.setBounds(368, 271, 46, 14);
 		getContentPane().add(lblNewLabel_16);
 
 		txtModelo = new JTextField();
-		txtModelo.setBounds(414, 230, 56, 20);
+		txtModelo.setBounds(414, 265, 56, 20);
 		getContentPane().add(txtModelo);
 		txtModelo.setColumns(10);
 
 		JLabel lblNewLabel_17 = new JLabel("Cor");
-		lblNewLabel_17.setBounds(127, 268, 34, 14);
+		lblNewLabel_17.setBounds(127, 296, 34, 14);
 		getContentPane().add(lblNewLabel_17);
 
 		txtCor = new JTextField();
-		txtCor.setBounds(160, 265, 57, 20);
+		txtCor.setBounds(160, 293, 57, 20);
 		getContentPane().add(txtCor);
 		txtCor.setColumns(10);
 
 		JLabel lblNewLabel_18 = new JLabel("Ano");
-		lblNewLabel_18.setBounds(248, 268, 25, 14);
+		lblNewLabel_18.setBounds(248, 296, 25, 14);
 		getContentPane().add(lblNewLabel_18);
 
 		txtAno = new JTextField();
@@ -205,12 +207,12 @@ public class OS extends JDialog {
 				}
 			}
 		});
-		txtAno.setBounds(284, 265, 56, 20);
+		txtAno.setBounds(284, 293, 56, 20);
 		getContentPane().add(txtAno);
 		txtAno.setColumns(10);
 
 		JLabel lblNewLabel_19 = new JLabel("Km");
-		lblNewLabel_19.setBounds(378, 268, 31, 14);
+		lblNewLabel_19.setBounds(378, 296, 31, 14);
 		getContentPane().add(lblNewLabel_19);
 
 		txtKm = new JTextField();
@@ -223,21 +225,21 @@ public class OS extends JDialog {
 				}
 			}
 		});
-		txtKm.setBounds(414, 265, 56, 20);
+		txtKm.setBounds(414, 293, 56, 20);
 		getContentPane().add(txtKm);
 		txtKm.setColumns(10);
 
-		JLabel lblNewLabel_20 = new JLabel("Serviço");
-		lblNewLabel_20.setBounds(115, 316, 80, 14);
+		JLabel lblNewLabel_20 = new JLabel("Defeito:");
+		lblNewLabel_20.setBounds(114, 354, 80, 14);
 		getContentPane().add(lblNewLabel_20);
 
-		txtServico = new JTextField();
-		txtServico.setBounds(160, 293, 311, 60);
-		getContentPane().add(txtServico);
-		txtServico.setColumns(10);
+		txtDefeito = new JTextField();
+		txtDefeito.setBounds(159, 331, 311, 60);
+		getContentPane().add(txtDefeito);
+		txtDefeito.setColumns(10);
 
 		JLabel lblNewLabel_21 = new JLabel("Data de Saída");
-		lblNewLabel_21.setBounds(224, 436, 84, 14);
+		lblNewLabel_21.setBounds(212, 560, 84, 14);
 		getContentPane().add(lblNewLabel_21);
 
 		txtDataSaida = new JTextField();
@@ -250,24 +252,24 @@ public class OS extends JDialog {
 				}
 			}
 		});
-		txtDataSaida.setBounds(306, 433, 86, 20);
+		txtDataSaida.setBounds(291, 557, 86, 20);
 		getContentPane().add(txtDataSaida);
 		txtDataSaida.setColumns(10);
 
 		JLabel lblNewLabel_22 = new JLabel("Pagamento");
-		lblNewLabel_22.setBounds(291, 401, 138, 14);
+		lblNewLabel_22.setBounds(276, 516, 138, 14);
 		getContentPane().add(lblNewLabel_22);
 
 		JLabel lblNewLabel_23 = new JLabel("Mecânico");
-		lblNewLabel_23.setBounds(102, 367, 64, 14);
+		lblNewLabel_23.setBounds(100, 476, 64, 14);
 		getContentPane().add(lblNewLabel_23);
 
-		JLabel lblNewLabel_24 = new JLabel("Status Os");
-		lblNewLabel_24.setBounds(294, 367, 73, 14);
+		JLabel lblNewLabel_24 = new JLabel("Status:");
+		lblNewLabel_24.setBounds(270, 476, 73, 14);
 		getContentPane().add(lblNewLabel_24);
 
 		txtMecanico = new JTextField();
-		txtMecanico.setBounds(160, 364, 115, 20);
+		txtMecanico.setBounds(160, 473, 102, 20);
 		getContentPane().add(txtMecanico);
 		txtMecanico.setColumns(10);
 
@@ -275,11 +277,11 @@ public class OS extends JDialog {
 		cboPagamento.setBackground(new Color(32, 178, 170));
 		cboPagamento.setModel(new DefaultComboBoxModel<Object>(
 				new String[] { "", "Pix", "Dinheiro", "Crédito", "Débito", "Boleto Bancário" }));
-		cboPagamento.setBounds(356, 397, 115, 22);
+		cboPagamento.setBounds(348, 512, 122, 22);
 		getContentPane().add(cboPagamento);
 
 		JLabel lblNewLabel_25 = new JLabel("Valor");
-		lblNewLabel_25.setBounds(112, 401, 35, 14);
+		lblNewLabel_25.setBounds(126, 516, 35, 14);
 		getContentPane().add(lblNewLabel_25);
 
 		txtValor = new JTextField();
@@ -293,7 +295,7 @@ public class OS extends JDialog {
 
 			}
 		});
-		txtValor.setBounds(160, 395, 89, 20);
+		txtValor.setBounds(160, 513, 64, 20);
 		getContentPane().add(txtValor);
 		txtValor.setColumns(10);
 
@@ -313,8 +315,9 @@ public class OS extends JDialog {
 
 		cboStatus = new JComboBox<Object>();
 		cboStatus.setBackground(new Color(32, 178, 170));
-		cboStatus.setModel(new DefaultComboBoxModel<Object>(new String[] { "", "Pendente", "Entregue" }));
-		cboStatus.setBounds(371, 364, 100, 22);
+		cboStatus.setModel(new DefaultComboBoxModel(new String[] { "", "Aguardando aprovação", "Aguardando mêcanico",
+				"Aguardando retirada de veículo ", "Aguardando peças", "Entregue ao cliente" }));
+		cboStatus.setBounds(314, 472, 156, 22);
 		getContentPane().add(cboStatus);
 
 		JLabel lblCliente = new JLabel("Cliente");
@@ -330,6 +333,7 @@ public class OS extends JDialog {
 			public void keyReleased(KeyEvent e) {
 				pesquisarCliente();
 			}
+
 			@Override
 			public void keyTyped(KeyEvent e) {
 				String caracteres = "abcdefghijklmnopqrstuvwxyz";
@@ -395,7 +399,7 @@ public class OS extends JDialog {
 				updateOs();
 			}
 		});
-		btnUpdate.setBounds(217, 460, 64, 64);
+		btnUpdate.setBounds(217, 606, 64, 64);
 		getContentPane().add(btnUpdate);
 
 		JPanel panelUsuarios_1 = new JPanel();
@@ -407,12 +411,12 @@ public class OS extends JDialog {
 		JPanel panelUsuarios = new JPanel();
 		panelUsuarios.setLayout(null);
 		panelUsuarios.setBackground(new Color(32, 178, 170));
-		panelUsuarios.setBounds(-3, 536, 595, 20);
+		panelUsuarios.setBounds(0, 677, 595, 20);
 		getContentPane().add(panelUsuarios);
 
 		JLabel lblNewLabel_2 = new JLabel("");
 		lblNewLabel_2.setIcon(new ImageIcon(OS.class.getResource("/img/icon120x120.png")));
-		lblNewLabel_2.setBounds(462, 458, 124, 120);
+		lblNewLabel_2.setBounds(471, 596, 124, 120);
 		getContentPane().add(lblNewLabel_2);
 
 		RestrictedTextField validarMarca = new RestrictedTextField(txtMarca);
@@ -424,13 +428,20 @@ public class OS extends JDialog {
 		RestrictedTextField validarCor = new RestrictedTextField(txtCor);
 		validarCor.setLimit(15);
 		validarCor.setOnlyText(true);
-		
+
+		RestrictedTextField ano = new RestrictedTextField(txtAno);
+		ano.setLimit(4);
+
+		RestrictedTextField valor = new RestrictedTextField(txtValor);
+		valor.setLimit(5);
+
+		RestrictedTextField km = new RestrictedTextField(txtKm);
+		km.setLimit(5);
+
 		RestrictedTextField validarMecanico = new RestrictedTextField(txtMecanico);
 		validarMecanico.setOnlyText(true);
 		validarMecanico.setAcceptSpace(true);
-		validarMecanico.setLimit(50);
-		
-
+		validarMecanico.setLimit(30);
 
 		btnImprimirOs = new JButton("");
 		btnImprimirOs.setToolTipText("Imprimir uma ordem de serviço");
@@ -441,7 +452,7 @@ public class OS extends JDialog {
 			}
 		});
 		btnImprimirOs.setIcon(new ImageIcon(OS.class.getResource("/img/impressora64x64.png")));
-		btnImprimirOs.setBounds(365, 460, 64, 64);
+		btnImprimirOs.setBounds(365, 606, 64, 64);
 		getContentPane().add(btnImprimirOs);
 
 		scrollPaneOs = new JScrollPane();
@@ -468,7 +479,40 @@ public class OS extends JDialog {
 		panelUsuarios_1_1.setBackground(new Color(32, 178, 170));
 		panelUsuarios_1_1.setBounds(0, 197, 595, 8);
 		getContentPane().add(panelUsuarios_1_1);
-	
+
+		JLabel lblNewLabel_20_1 = new JLabel("Serviço");
+		lblNewLabel_20_1.setBounds(114, 425, 80, 14);
+		getContentPane().add(lblNewLabel_20_1);
+
+		txtServico = new JTextField();
+		txtServico.setColumns(10);
+		txtServico.setBounds(159, 402, 311, 60);
+		getContentPane().add(txtServico);
+
+		panelUsuarios_1_2 = new JPanel();
+		panelUsuarios_1_2.setLayout(null);
+		panelUsuarios_1_2.setBackground(new Color(32, 178, 170));
+		panelUsuarios_1_2.setBounds(0, 235, 595, 8);
+		getContentPane().add(panelUsuarios_1_2);
+
+		cboOrcamento = new JComboBox<Object>();
+		cboOrcamento.setModel(new DefaultComboBoxModel(new String[] { "", "Orçamento", "Ordem de serviço" }));
+		cboOrcamento.setBackground(new Color(32, 178, 170));
+		cboOrcamento.setBounds(260, 209, 149, 22);
+		getContentPane().add(cboOrcamento);
+
+		JLabel lblOs = new JLabel("OS:");
+		lblOs.setBounds(237, 215, 46, 14);
+		getContentPane().add(lblOs);
+
+		btnCreate.setEnabled(true);
+		txtPesquisarCliente.setEditable(true);
+		btnImprimirOs.setEnabled(false);
+		txtOs.setEditable(true);
+		btnDelete.setEnabled(false);
+		btnUpdate.setEnabled(false);
+		txtIdCli.setEditable(true);
+		btnPesquisar.setEnabled(true);
 
 	}// fim do construtor
 
@@ -490,6 +534,9 @@ public class OS extends JDialog {
 	private JButton btnImprimirOs;
 	private JTable tableOs;
 	private JScrollPane scrollPaneOs;
+	private JTextField txtServico;
+	private JPanel panelUsuarios_1_2;
+	private JComboBox<Object> cboOrcamento;
 
 	private void pesquisarOsReleased() {
 		String read5 = "select os as OS, modelo as Modelo, placa as Placa, status_os as Status from tbos where os like ?";
@@ -507,7 +554,7 @@ public class OS extends JDialog {
 	}
 
 	private void pesquisarCliente() {
-		
+
 		String read2 = "select id, nome, fone  from tbclientes where nome like ?";
 		try {
 			Connection con = dao.conectar();
@@ -546,21 +593,17 @@ public class OS extends JDialog {
 			txtOs.requestFocus();
 		} else {
 
-			// Iniciar com a instru��o sql
-			// ? � um par�metro a ser substitu�do
 			String read = "select * from tbos where os = ?";
 			try {
-				// Estabelecer a conex�o ("abrir a porta da geladeira")
+
 				Connection con = dao.conectar();
-				// Preparar o c�digo sql para execu��o
+
 				PreparedStatement pst = con.prepareStatement(read);
-				// a linha abaixo substitui o ? pelo conte�do da caixa de texto txtNome, o 1 faz
-				// refer�ncia a interroga��o
+
 				pst.setString(1, txtOs.getText());
-				// Obter os dados dos fornecedores ( id resultado)
+
 				ResultSet rs = pst.executeQuery();
-				// verificar se existe um contato cadastrado
-				// rs.next() significa ter um contato correspondente ao nome pesquisado
+
 				if (rs.next()) {
 
 					// setar as caixas de texto com o resultado da pesquisa
@@ -578,22 +621,26 @@ public class OS extends JDialog {
 					txtCor.setText(rs.getString(6));
 					txtAno.setText(rs.getString(7));
 					txtKm.setText(rs.getString(8));
-					txtServico.setText(rs.getString(9));
-					txtMecanico.setText(rs.getString(10));
-					cboStatus.setSelectedItem(rs.getString(11));
-					txtValor.setText(rs.getString(12));
-					txtDataSaida.setText(rs.getString(13));
-					cboPagamento.setSelectedItem(rs.getString(14));
-					txtIdCli.setText(rs.getString(15));
+					cboOrcamento.setSelectedItem(rs.getString(9));
+					txtServico.setText(rs.getString(10));
+					txtDefeito.setText(rs.getString(11));
+					txtMecanico.setText(rs.getString(12));
+					cboStatus.setSelectedItem(rs.getString(13));
+					txtValor.setText(rs.getString(14));
+					txtDataSaida.setText(rs.getString(15));
+					
+					cboPagamento.setSelectedItem(rs.getString(16));
+					txtIdCli.setText(rs.getString(17));
 					txtIdCli.setEditable(false);
 					txtPesquisarCliente.setEditable(false);
 					btnImprimirOs.setEnabled(true);
 					btnCreate.setEnabled(false);
-					
+					btnUpdate.setEnabled(true);
+					btnDelete.setEnabled(true);
 
 				} else {
 					JOptionPane.showMessageDialog(null, "Ordem de Serviço inexistente");
-				limpar();
+					limpar();
 					btnCreate.setEnabled(true);
 					txtPesquisarCliente.setEditable(true);
 					btnImprimirOs.setEnabled(false);
@@ -604,12 +651,12 @@ public class OS extends JDialog {
 					txtIdCli.setEditable(true);
 					txtIdCli.setText(null);
 					btnPesquisar.setEnabled(false);
-					
+
 					((DefaultTableModel) table.getModel()).setRowCount(0);
 					((DefaultTableModel) tableOs.getModel()).setRowCount(0);
-					
+
 				}
-				
+
 				con.close();
 			} catch (Exception e) {
 				System.out.println(e);
@@ -624,8 +671,12 @@ public class OS extends JDialog {
 		/**
 		 * Validacao
 		 */
-
-		if (txtPlaca.getText().isEmpty()) {
+	
+			
+		if (cboOrcamento.getSelectedItem().equals("")) {
+			JOptionPane.showMessageDialog(null, "Insira se é um orçamento ou uma ordem de serviço ");
+			cboOrcamento.requestFocus();
+		} else if (txtPlaca.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Insira a Placa");
 			txtPlaca.requestFocus();
 
@@ -644,9 +695,9 @@ public class OS extends JDialog {
 		} else if (txtKm.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Insira o Km");
 			txtKm.requestFocus();
-		} else if (txtServico.getText().isEmpty()) {
+		} else if (txtDefeito.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Insira o Serviço");
-			txtServico.requestFocus();
+			txtDefeito.requestFocus();
 		} else if (txtMecanico.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Insira o nome do Mecânico");
 			txtMecanico.requestFocus();
@@ -657,48 +708,41 @@ public class OS extends JDialog {
 		} else if (txtValor.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Insira o Valor");
 			txtValor.requestFocus();
-		} else if (cboPagamento.getSelectedItem().equals("")) {
-			JOptionPane.showMessageDialog(null, "Insira a forma de Pagamento");
 
 		} else if (txtIdCli.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Insira o ID do Cliente ");
 			txtIdCli.requestFocus();
 		} else {
 
-			String create = "insert into tbos (placa,marca,modelo,cor,ano,km,servico,mecanico,status_os,valor,data_saida,forma_pagamento,id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String create = "insert into tbos (placa,marca,modelo,cor,ano,km, orcamento, servico,defeito, mecanico,status_os,valor,data_saida,forma_pagamento,id) values (?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			try {
 				Connection con = dao.conectar();
 				PreparedStatement pst = con.prepareStatement(create);
-				// Formatar o valor do JCalendar para inser��o correta no banco
-				// SimpleDateFormat formatador = new SimpleDateFormat("yyyyMMdd");
-				// String dataFormatada = formatador.format(dateEntrada.getDate());
-				// pst.setString(1, dataFormatada);
+
 				pst.setString(1, txtPlaca.getText());
 				pst.setString(2, txtMarca.getText());
 				pst.setString(3, txtModelo.getText());
 				pst.setString(4, txtCor.getText());
 				pst.setString(5, txtAno.getText());
 				pst.setString(6, txtKm.getText());
-				pst.setString(7, txtServico.getText());
-				pst.setString(8, txtMecanico.getText());
-				pst.setString(9, cboStatus.getSelectedItem().toString());
-				pst.setString(10, txtValor.getText());
-				pst.setString(11, txtDataSaida.getText());
-				pst.setString(12, cboPagamento.getSelectedItem().toString());
-				pst.setString(13, txtIdCli.getText());
+				pst.setString(7, cboOrcamento.getSelectedItem().toString());
+				pst.setString(8, txtServico.getText());
+				pst.setString(9, txtDefeito.getText());
+				pst.setString(10, txtMecanico.getText());
+				pst.setString(11, cboStatus.getSelectedItem().toString());
+				pst.setString(12, txtValor.getText());
+				pst.setString(13, txtDataSaida.getText());
+				pst.setString(14, cboPagamento.getSelectedItem().toString());
+				pst.setString(15, txtIdCli.getText());
 
 				txtOs.setEditable(false);
 				txtOs.setText(null);
-				btnCreate.setEnabled(true);
-				btnDelete.setEnabled(false);
-				btnUpdate.setEnabled(false);
 				txtIdCli.setEditable(true);
 
 				int confirma = pst.executeUpdate();
 				if (confirma == 1) {
 					JOptionPane.showMessageDialog(null, "Ordem de serviço -  cadastrada com sucesso!");
-					
-			
+
 					btnCreate.setEnabled(true);
 					btnUpdate.setEnabled(true);
 					btnDelete.setEnabled(true);
@@ -709,9 +753,7 @@ public class OS extends JDialog {
 					con.close();
 				}
 
-      this.showClientOrders(txtIdCli.getText());
-
-
+				this.showClientOrders(txtIdCli.getText());
 
 			} catch (java.sql.SQLIntegrityConstraintViolationException e1) {
 				JOptionPane.showMessageDialog(null, "Ordem de serviço não adicionada - OS Duplicada");
@@ -730,10 +772,10 @@ public class OS extends JDialog {
 			}
 		}
 	}
-	private void showClientOrders(String clientId)
-	{
+
+	private void showClientOrders(String clientId) {
 		String read5 = "select os as OS, marca as Marca, placa as Placa, status_os as Status from tbos where id = ? order by os desc";
-		
+
 		try {
 			Connection con = dao.conectar();
 			PreparedStatement pst = con.prepareStatement(read5);
@@ -753,10 +795,12 @@ public class OS extends JDialog {
 		 * Validacao
 		 */
 
-		if (txtPlaca.getText().isEmpty()) {
+		if (cboOrcamento.getSelectedItem().equals("")) {
+			JOptionPane.showMessageDialog(null, "Insira se é um orçamento ou uma ordem de serviço");
+			cboOrcamento.requestFocus();
+		} else if (txtPlaca.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Insira a Placa");
 			txtPlaca.requestFocus();
-
 		} else if (txtMarca.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Insira a Marca");
 			txtMarca.requestFocus();
@@ -772,9 +816,9 @@ public class OS extends JDialog {
 		} else if (txtKm.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Insira o Km");
 			txtKm.requestFocus();
-		} else if (txtServico.getText().isEmpty()) {
+		} else if (txtDefeito.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Insira o Serviço");
-			txtServico.requestFocus();
+			txtDefeito.requestFocus();
 		} else if (txtMecanico.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Insira o nome do Mecânico");
 			txtMecanico.requestFocus();
@@ -785,15 +829,13 @@ public class OS extends JDialog {
 		} else if (txtValor.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Insira o Valor");
 			txtValor.requestFocus();
-		} else if (cboPagamento.getSelectedItem().equals("")) {
-			JOptionPane.showMessageDialog(null, "Insira a forma de Pagamento");
-			cboPagamento.requestFocus();
+
 		} else if (txtIdCli.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Insira o ID do cliente ");
 			txtIdCli.requestFocus();
 		} else {
 
-			String update = "update tbos set placa = ?, marca = ?, modelo = ?, cor = ?, ano = ?, km = ?, servico = ?, mecanico = ?, status_os = ?, valor = ?, data_saida = ?, forma_pagamento = ?, id = ?  where os = ?";
+			String update = "update tbos set placa = ?, marca = ?, modelo = ?, cor = ?, ano = ?, km = ?, orcamento = ?, servico = ?, defeito = ?,  mecanico = ?, status_os = ?, valor = ?, data_saida = ?, forma_pagamento = ?, id = ?  where os = ?";
 			try {
 				Connection con = dao.conectar();
 				PreparedStatement pst = con.prepareStatement(update);
@@ -803,14 +845,16 @@ public class OS extends JDialog {
 				pst.setString(4, txtCor.getText());
 				pst.setString(5, txtAno.getText());
 				pst.setString(6, txtKm.getText());
-				pst.setString(7, txtServico.getText());
-				pst.setString(8, txtMecanico.getText());
-				pst.setString(9, cboStatus.getSelectedItem().toString());
-				pst.setString(10, txtValor.getText());
-				pst.setString(11, txtDataSaida.getText());
-				pst.setString(12, cboPagamento.getSelectedItem().toString());
-				pst.setString(13, txtIdCli.getText());
-				pst.setString(14, txtOs.getText());
+				pst.setString(7, cboOrcamento.getSelectedItem().toString());
+				pst.setString(8, txtServico.getText());
+				pst.setString(9, txtDefeito.getText());
+				pst.setString(10, txtMecanico.getText());
+				pst.setString(11, cboStatus.getSelectedItem().toString());
+				pst.setString(12, txtValor.getText());
+				pst.setString(13, txtDataSaida.getText());
+				pst.setString(14, cboPagamento.getSelectedItem().toString());
+				pst.setString(15, txtIdCli.getText());
+				pst.setString(16, txtOs.getText());
 
 				// Executar a query e confirmar a inser��o no banco
 
@@ -821,10 +865,10 @@ public class OS extends JDialog {
 					limpar();
 					JOptionPane.showMessageDialog(null, "Ordem de Serviço - atualizada com sucesso");
 					btnCreate.setEnabled(true);
-					btnUpdate.setEnabled(true);
-					btnDelete.setEnabled(true);
+					btnUpdate.setEnabled(false);
+					btnDelete.setEnabled(false);
 					btnPesquisar.setEnabled(true);
-					btnImprimirOs.setEnabled(true);
+					btnImprimirOs.setEnabled(false);
 				} else {
 					JOptionPane.showMessageDialog(null, "ERRO - OS já existente");
 					limpar();
@@ -912,9 +956,9 @@ public class OS extends JDialog {
 				ResultSet rs = pst.executeQuery();
 				while (rs.next()) {
 					// document.add(new Paragraph(" "));
-				//	Date data = new Date();
-				//	DateFormat formatador = DateFormat.getDateInstance(DateFormat.FULL);
-					//document.add(new Paragraph(new Paragraph(formatador.format(data))));
+					// Date data = new Date();
+					// DateFormat formatador = DateFormat.getDateInstance(DateFormat.FULL);
+					// document.add(new Paragraph(new Paragraph(formatador.format(data))));
 					document.add(new Paragraph(" "));
 					Paragraph ordemdeservico = new Paragraph("Ordem de Serviço: " + rs.getString(1));
 					ordemdeservico.setAlignment(Element.ALIGN_CENTER);
@@ -924,7 +968,7 @@ public class OS extends JDialog {
 					dataentrada.setAlignment(Element.ALIGN_LEFT);
 					document.add(dataentrada);
 					document.add(new Paragraph(" "));
-					Paragraph cliente = new Paragraph("Cliente " + rs.getString(3));
+					Paragraph cliente = new Paragraph("Cliente: " + rs.getString(3));
 					cliente.setAlignment(Element.ALIGN_LEFT);
 					document.add(cliente);
 					document.add(new Paragraph(" "));
@@ -958,13 +1002,13 @@ public class OS extends JDialog {
 					valor.setAlignment(Element.ALIGN_LEFT);
 					document.add(valor);
 					document.add(new Paragraph(" "));
-					
+
 					Paragraph datasaida = new Paragraph("Data de Saída: " + rs.getString(10));
 					datasaida.setAlignment(Element.ALIGN_LEFT);
 					document.add(datasaida);
 					document.add(new Paragraph(" "));
 
-					Image imagem = Image.getInstance("C:\\Users\\karen.osilva7\\Desktop\\atlantidaom/logo.png");
+					Image imagem = Image.getInstance("C:\\Users\\Karen\\Downloads\\atlantidaom/logo.png");
 					imagem.scaleToFit(250, 200);
 					imagem.setAbsolutePosition(200, 700);
 
@@ -977,7 +1021,7 @@ public class OS extends JDialog {
 
 		} catch (Exception e) {
 			System.out.println(e);
-		} finally { 
+		} finally {
 			document.close();
 		}
 
@@ -1002,11 +1046,13 @@ public class OS extends JDialog {
 		txtCor.setText(null);
 		txtAno.setText(null);
 		txtKm.setText(null);
+		txtDefeito.setText(null);
 		txtServico.setText(null);
 		txtValor.setText(null);
 		txtMecanico.setText(null);
 		txtDataSaida.setText(null);
 		cboStatus.setSelectedItem(null);
+		cboOrcamento.setSelectedItem(null);
 		cboPagamento.setSelectedItem(null);
 		dateEntrada.setDate(null);
 		((DefaultTableModel) table.getModel()).setRowCount(0);
